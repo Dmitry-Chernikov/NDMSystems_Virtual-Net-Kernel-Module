@@ -1,0 +1,7 @@
+<map id="vnet_xmit" name="vnet_xmit">
+<area shape="rect" id="Node000001" title="Обрабатывает skb интерфейса и эмулирует ответное сетевое поведение." alt="" coords="5,31,84,56"/>
+<area shape="rect" id="Node000002" href="$virtual__net_8c.html#ae71852c0f3e6b373f398b3cd684f2efa" title="Преобразует IPv4 строку в 32&#45;битный адрес в network byte order." alt="" coords="150,5,222,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,34,136,24,137,29,85,39"/>
+<area shape="rect" id="Node000003" href="$virtual__net_8c.html#a903000ea5e1fe8dd62c0da6838fbc7f0" title="Формирует и отправляет ARP reply." alt="" coords="132,55,240,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,47,118,53,118,58,84,53"/>
+</map>

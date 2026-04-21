@@ -1,0 +1,5 @@
+<map id="vnet_arp_reply" name="vnet_arp_reply">
+<area shape="rect" id="Node000001" title="Формирует и отправляет ARP reply." alt="" coords="132,5,240,31"/>
+<area shape="rect" id="Node000002" href="$virtual__net_8c.html#aaf196fe2024aa0f6f8892c6d25f3fbaf" title="Обрабатывает skb интерфейса и эмулирует ответное сетевое поведение." alt="" coords="5,5,84,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,21,84,21,84,15,118,15"/>
+</map>

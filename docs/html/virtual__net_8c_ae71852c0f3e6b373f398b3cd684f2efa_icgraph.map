@@ -1,0 +1,7 @@
+<map id="str_to_ip" name="str_to_ip">
+<area shape="rect" id="Node000001" title="Преобразует IPv4 строку в 32&#45;битный адрес в network byte order." alt="" coords="189,31,261,56"/>
+<area shape="rect" id="Node000002" href="$virtual__net_8c.html#af593d91731c9ee5b462e2310a32621c1" title="Обработчик sysctl для /proc/sys/net/vnet/ip_addr." alt="" coords="5,5,141,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,38,141,32,142,27,176,33"/>
+<area shape="rect" id="Node000003" href="$virtual__net_8c.html#aaf196fe2024aa0f6f8892c6d25f3fbaf" title="Обрабатывает skb интерфейса и эмулирует ответное сетевое поведение." alt="" coords="34,55,113,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,54,114,64,113,59,175,48"/>
+</map>

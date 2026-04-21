@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Virtual Net Kernel Module: Virtual Net Kernel Module (test assignment)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.gif"/></td>
+  <td id="projectalign">
+   <div id="projectname">Virtual Net Kernel Module<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Модуль ядра Linux на C, который создаёт виртуальный сетевой интерфейс, позволяет задавать IPv4 через `procfs/sysctl` и отвечает на `ping`.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Virtual Net Kernel Module (test assignment) </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> Проект выполнен в рамках тестового задания для компании <a href="https://ndmsystems.ru/">НДМ Системы</a>.</p>
+<p>Тестовое задание: модуль ядра Linux на C, который создаёт виртуальный сетевой интерфейс, позволяет задавать IPv4 через <code>procfs/sysctl</code> и отвечает на <code>ping</code>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Что реализовано</h1>
+<ul>
+<li>Модуль создаёт виртуальный интерфейс <code>vnet0</code>.</li>
+<li>Регистрирует параметр <code>ip_addr</code> в <code>procfs/sysctl</code>:<ul>
+<li>путь: <code>/proc/sys/net/vnet/ip_addr</code></li>
+<li>формат: строка IPv4 (<code>10.0.0.1</code> и т.д.)</li>
+</ul>
+</li>
+<li>На входящий ICMP Echo Request (ping) для адреса интерфейса модуль формирует Echo Reply.</li>
+<li>Для работы добавлены цели в <code>Makefile</code>: сборка, загрузка, тест, логи, статус.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Структура проекта</h1>
+<ul>
+<li><code><a class="el" href="virtual__net_8c.html" title="Виртуальный сетевой интерфейс ядра Linux с управлением IPv4 через sysctl/procfs.">virtual_net.c</a></code> — исходный код модуля.</li>
+<li><code>Makefile</code> — сборка/загрузка/тестовые команды.</li>
+<li><code>.vscode/*</code> — настройки Cursor/VS Code (задачи и IntelliSense).</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Требования</h1>
+<ul>
+<li>Linux с заголовками текущего ядра (<code>linux-headers-$(uname -r)</code> или аналог).</li>
+<li><code>gcc</code>, <code>make</code>, <code>kmod</code>.</li>
+<li><code>iproute2</code> (<code>ip</code>), <code>ping</code>.</li>
+<li>Права <code>sudo</code> для загрузки/выгрузки модуля и настройки интерфейса.</li>
+</ul>
+<p>Установка зависимостей (Debian/RHEL-family) через Makefile:</p>
+<div class="fragment"><div class="line">make init</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+Детали реализации и архитектура</h1>
+<p>Модуль реализует жизненный цикл <code>init</code>/<code>exit</code> через макросы <code>module_init</code>/<code>module_exit</code>.</p>
+<ol type="1">
+<li>**Инициализация (<code>virtual_net_init</code>)**:<ul>
+<li>Регистрирует таблицу <code>sysctl</code> в <code>/proc/sys/net/vnet/ip_addr</code>.</li>
+<li>Выделяет и инициализирует сетевое устройство <code>vnet0</code> с помощью <code>alloc_etherdev</code>.</li>
+<li>Регистрирует устройство в сетевом стеке ядра (<code>register_netdev</code>).</li>
+<li>Переводит интерфейс в состояние <code>UP</code>.</li>
+<li>Назначает IP-адрес по умолчанию через <code>modify_vif_ip_userspace</code>.</li>
+</ul>
+</li>
+<li>**Обработка пакетов (<code>vnet_xmit</code>)**:<ul>
+<li>Это основная функция-коллбэк, зарегистрированная в <code>net_device_ops</code>.</li>
+<li>Принимает пакет (<code>sk_buff</code>) и обрабатывает его в зависимости от протокола:<ul>
+<li><b>ARP Request</b>: Проверяет, что запрос адресован текущему IP, и отправляет <code>ARP Reply</code>.</li>
+<li><b>ICMP Echo Request (ping)</b>: Проверяет адрес назначения. Если совпадает с IP <code>vnet0</code>, создает копию пакета, меняет IP и тип ICMP на <code>ECHO_REPLY</code>, пересчитывает контрольные суммы и возвращает пакет в стек ядра (<code>netif_rx</code>).</li>
+</ul>
+</li>
+<li>Использует <code>spinlock</code> (<code>vnet_ip_lock</code>) для потокобезопасного доступа к строке IP-адреса.</li>
+</ul>
+</li>
+<li>**Управление IP через <code>procfs</code> (<code>vnet_sysctl_handler</code>)**:<ul>
+<li>Обработчик <code>sysctl</code> реагирует на запись в <code>/proc/sys/net/vnet/ip_addr</code>.</li>
+<li>Валидирует новый IP-адрес.</li>
+<li>Удаляет старый IP-адрес с интерфейса.</li>
+<li>Назначает новый IP-адрес.</li>
+<li>Назначение выполняется через <code>userspace</code> утилиту <code>ip</code> для надежности и соответствия стандартным практикам.</li>
+</ul>
+</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Инструкции по сборке и запуску</h1>
+<p>Процесс сборки и запуска полностью автоматизирован через <code>Makefile</code>.</p>
+<div class="fragment"><div class="line"># 1) Установка зависимостей (один раз)</div>
+<div class="line">make init</div>
+<div class="line"> </div>
+<div class="line"># 2) Сборка модуля</div>
+<div class="line">make all</div>
+<div class="line"># или выполнение полного сценария теста</div>
+<div class="line">make test</div>
+<div class="line"> </div>
+<div class="line"># 3) Загрузка модуля</div>
+<div class="line">make load</div>
+<div class="line"> </div>
+<div class="line"># 4) Проверка функциональности</div>
+<div class="line">ping -c 4 10.0.0.1</div>
+</div><!-- fragment --><p><b>Ключевые цели <code>Makefile</code>:</b></p>
+<p>Команда</p>
+<p>Назначение</p>
+<p><code>make all</code></p>
+<p>Компилирует модуль (<code>vnet.ko</code>)</p>
+<p><code>make test</code></p>
+<p><b>Рекомендуется</b>: <code>make all</code> + <code>make load</code> + базовая настройка интерфейса</p>
+<p><code>make load</code></p>
+<p>Загружает модуль в ядро (<code>sudo insmod</code>)</p>
+<p><code>make unload</code></p>
+<p>Выгружает модуль из ядра (<code>sudo rmmod</code>)</p>
+<p><code>make status</code></p>
+<p>Показывает статус модуля, интерфейса и IP-адреса</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Примеры использования</h1>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Изменение IP-адреса через &lt;tt&gt;procfs&lt;/tt&gt;</h2>
+<div class="fragment"><div class="line"># Просмотр текущего IP</div>
+<div class="line">$ cat /proc/sys/net/vnet/ip_addr</div>
+<div class="line">10.0.0.1</div>
+<div class="line"> </div>
+<div class="line"># Изменение IP-адреса</div>
+<div class="line">$ echo &#39;10.0.0.100&#39; | sudo tee /proc/sys/net/vnet/ip_addr</div>
+<div class="line">10.0.0.100</div>
+<div class="line"> </div>
+<div class="line"># Проверка нового IP</div>
+<div class="line">$ cat /proc/sys/net/vnet/ip_addr</div>
+<div class="line">10.0.0.100</div>
+<div class="line"> </div>
+<div class="line"># Проверка ответа на ping (должен работать)</div>
+<div class="line">$ ping -c 2 10.0.0.100</div>
+<div class="line">PING 10.0.0.100 (10.0.0.100) 56(84) bytes of data.</div>
+<div class="line">64 bytes from 10.0.0.100: icmp_seq=1 ttl=64 time=0.101 ms</div>
+<div class="line">64 bytes from 10.0.0.100: icmp_seq=2 ttl=64 time=0.088 ms</div>
+<div class="line"> </div>
+<div class="line">--- 10.0.0.100 ping statistics ---</div>
+<div class="line">2 packets transmitted, 2 received, 0% packet loss, time 1023ms</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+Использование команд отладки</h2>
+<div class="fragment"><div class="line"># Проверка статуса модуля и интерфейса</div>
+<div class="line">$ make status</div>
+<div class="line">═══════════════════════════════════════════════════════════════════</div>
+<div class="line">  СТАТУС МОДУЛЯ VNET</div>
+<div class="line">═══════════════════════════════════════════════════════════════════</div>
+<div class="line"> </div>
+<div class="line">✅ Модуль: ЗАГРУЖЕН</div>
+<div class="line"> </div>
+<div class="line">📊 Информация о модуле:</div>
+<div class="line"> vnet                   16384  0</div>
+<div class="line"> </div>
+<div class="line">🌐 Интерфейс vnet0: СУЩЕСТВУЕТ</div>
+<div class="line"> </div>
+<div class="line">4: vnet0: &lt;BROADCAST,NOARP,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT group default qlen 1000</div>
+<div class="line">    link/ether 86:55:28:8d:8a:56 brd ff:ff:ff:ff:ff:ff</div>
+<div class="line"> </div>
+<div class="line">    inet 10.0.0.100/24 scope global vnet0</div>
+<div class="line">       valid_lft forever preferred_lft forever</div>
+<div class="line"> </div>
+<div class="line">    RX: bytes  packets  errors  dropped overrun mcast   </div>
+<div class="line">       1120       14       0       0       0       0  </div>
+<div class="line">    TX: bytes  packets  errors  dropped carrier collsns </div>
+<div class="line">       1120       14       0       0       0       0  </div>
+<div class="line"> </div>
+<div class="line">🔧 Sysctl настройки:</div>
+<div class="line">  IP адрес: 10.0.0.100</div>
+<div class="line">═══════════════════════════════════════════════════════════════════</div>
+<div class="line"> </div>
+<div class="line"># Просмотр логов ядра в реальном времени</div>
+<div class="line">$ make watch</div>
+<div class="line">📡 Мониторинг логов ядра (Ctrl+C для выхода)...</div>
+<div class="line">[  530.700000] VNET: IP изменён: 10.0.0.1 -&gt; 10.0.0.100</div>
+<div class="line">[  530.700001] VNET: старый IP-адрес удалён: 10.0.0.1</div>
+<div class="line">[  530.700002] VNET: выполнение команды: /sbin/ip addr add 10.0.0.100/24 dev vnet0 2&gt;/dev/null</div>
+<div class="line">[  530.700003] VNET: IP-адрес интерфейса обновлён до 10.0.0.100</div>
+<div class="line">[  534.500000] VNET: модуль выгружает virtual net dev. IP: 10.0.0.100, MAC: 86:55:28:8d:8a:56</div>
+<div class="line">[  534.500001] VNET: модуль освобождает sysctl header</div>
+<div class="line">[  534.500002] VNET: модуль выгружен</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+Процесс отладки и тестирования</h1>
+<p>Для диагностики проблем используйте следующие команды:</p>
+<div class="fragment"><div class="line"># Проверка, что модуль загружен</div>
+<div class="line">lsmod | grep vnet</div>
+<div class="line"> </div>
+<div class="line"># Проверка состояния и IP интерфейса</div>
+<div class="line">make status</div>
+<div class="line"> </div>
+<div class="line"># Просмотр логов ядра</div>
+<div class="line">make logs</div>
+<div class="line"># или в реальном времени</div>
+<div class="line">make watch</div>
+<div class="line"> </div>
+<div class="line"># Быстрый сценарий для тестирования</div>
+<div class="line">make test</div>
+</div><!-- fragment --><p><b>Типичные проблемы и решения:</b></p>
+<ul>
+<li>**<code>Ping не работает</code>**: Убедитесь, что интерфейс поднят (<code>ip link set vnet0 up</code>) и ему назначен правильный IP-адрес.</li>
+<li>**<code>Module already loaded</code>**: Выполните <code>make unload</code> перед повторной загрузкой.</li>
+<li>**<code>Permission denied</code>**: Большинство команд требуют прав <code>sudo</code>.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Документация (Doxygen)</h1>
+<p>В проекте используется <code>Doxygen</code> для генерации API-документации на основе комментариев в коде.</p>
+<ol type="1">
+<li><p class="startli"><b>Генерация документации</b>:</p>
+<p class="startli"><code>bash make docs @section autotoc_md11 или doxygen Doxyfile </code></p>
+<p class="startli">Документация будет сгенерирована в директории <code>./docs/html</code>.</p>
+</li>
+<li><p class="startli"><b>Просмотр документации</b>:</p>
+<p class="startli"><code>bash make docs-serve @section autotoc_md12 Документация доступна по адресу: <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> </code></p>
+</li>
+</ol>
+<p>Документация включает описание всех функций, структур и макросов, используемых в проекте, что значительно упрощает понимание кода.</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Настройка Cursor / VS Code</h2>
+<p>В проекте уже подготовлены:</p>
+<ul>
+<li><code>.vscode/tasks.json</code> — задачи <code>make all</code>, <code>make clean</code>, <code>make compile_commands</code>.</li>
+<li><code>.vscode/c_cpp_properties.json</code> — конфигурация C/C++ для модуля ядра.</li>
+<li><code>.vscode/settings.json</code> — подключение <code>compile_commands.json</code>.</li>
+</ul>
+<p>Для корректной индексации C/C++:</p>
+<div class="fragment"><div class="line">make compile_commands</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
+Удаление</h2>
+<div class="fragment"><div class="line">make unload</div>
+<div class="line">make clean</div>
+</div><!-- fragment --><hr  />
+<p>Автор: Dmitry Chernikov</p>
+<p>Этот модуль распространяется под лицензией <b>MIT</b>. Полный текст лицензии доступен в файле <code>LICENSE</code>. </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

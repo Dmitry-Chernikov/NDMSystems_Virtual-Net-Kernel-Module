@@ -1,0 +1,21 @@
+<map id="virtual_net.h" name="virtual_net.h">
+<area shape="rect" id="Node000001" title="Общие определения для модуля виртуального сетевого интерфейса." alt="" coords="503,5,596,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,112,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="502,28,126,81,125,76,502,23"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="136,79,235,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="503,31,249,80,248,75,502,26"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="259,79,339,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="510,33,353,77,351,72,508,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="363,79,483,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="530,33,457,74,454,69,528,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="507,79,591,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="552,31,552,65,547,65,547,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="615,79,713,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="569,28,635,69,632,74,566,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="737,79,847,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="589,28,741,72,739,77,588,33"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="872,79,968,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="597,26,859,76,858,81,596,31"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="993,79,1058,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="596,21,762,41,979,76,979,81,761,47,596,27"/>
+</map>
